@@ -38,8 +38,9 @@ public class BookController {
         var cambio= proxy.getCambio(book.getPrice(),"USD",currency);
 
         var port = environment.getProperty("local.server.port");
-        book.setEnvironment(port);
+        book.setEnvironment("book port: " + port + " cambio port: " + cambio.getEnviroment()+ cambio);
         book.setPrice(cambio.getConvertedValue());
+        System.out.println("cambio: " + cambio);
         return book;
     }
 }
