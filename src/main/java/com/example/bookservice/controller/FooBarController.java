@@ -20,7 +20,7 @@ public class FooBarController {
 
     private final Logger logger = LoggerFactory.getLogger(FooBarController.class);
     @GetMapping("/foo-bar")
-    @Operation(description = "Foo bar.")
+    @Operation(summary = "Foo bar.")
 //    @Retry(name="default",fallbackMethod = "falbackMethod")
 //    @CircuitBreaker(name="default",fallbackMethod = "falbackMethod")
 //    @RateLimiter(name = "default")

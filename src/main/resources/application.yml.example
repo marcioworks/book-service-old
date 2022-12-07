@@ -39,9 +39,17 @@ spring:
       ddl-auto: update
     show-sql: true
     properties:
-      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+      dialect: org.hibernate.dialect.MySQL57Dialect
   flyway:
-    url: jdbc:mysql://localhost:3306/
-    schemas: book_service
+    url: jdbc:mysql://localhost:3306/book_service?useTimeZone=true&serverTimeZone=UTC
     user:
     password:
+  sleuth:
+    sampler:
+      probability: 1.0
+#  zipkin:
+#    base-url: http://localhost:9411/
+springdoc:
+  show-actuator: true
+  api-docs:
+    path: /book-service/v3/api-docs
